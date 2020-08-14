@@ -43,6 +43,16 @@ Lustre has recently added a new feature that allows for having quotas for `OST p
 file system. If attempting to write to an OST that is part of one or more OST groups, a user should also be able to check their quota
 status on any OST pool, and not just the global pool that consists of all OSTs.
 
+### LFS Interface
+The current way to query quota status uses the `lfs` command line tool. `lfs` already has many subcommands a flags, including a
+`quota` subcommand that is used to get quota data. 
+The plan is to add a flag to the `lfs quota` command. THe flag is `-e` meaning `edquot?`. 
+The current usage of `lfs quota` is:
+not defined for OST quota pools 
+
+
+
+
 ## Non-Goals
 Don't create a new `ioctl` that returns the quota data for multiple lustre users.
 
